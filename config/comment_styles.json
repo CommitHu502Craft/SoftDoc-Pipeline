@@ -1,0 +1,37 @@
+{
+  "comment_styles": {
+    "style_a": {
+      "name": "经典边框",
+      "description": "使用等号边框的传统注释风格"
+    },
+    "style_b": {
+      "name": "短横线边框",
+      "description": "使用短横线边框的简洁风格"
+    },
+    "style_c": {
+      "name": "星号边框",
+      "description": "使用星号边框的醒目风格"
+    },
+    "style_d": {
+      "name": "双线框",
+      "description": "使用Unicode双线框的精致风格"
+    },
+    "style_e": {
+      "name": "单线框",
+      "description": "使用Unicode单线框的优雅风格"
+    },
+    "style_f": {
+      "name": "加号边框",
+      "description": "使用加号边框的ASCII风格"
+    },
+    "style_g": {
+      "name": "波浪线边框",
+      "description": "使用波浪线边框的柔和风格"
+    },
+    "style_h": {
+      "name": "井号边框",
+      "description": "使用井号边框的强调风格"
+    }
+  },
+  "usage_note": "这些样式配置被 code_differentiator.py 使用，每个项目会根据随机种子选择其中一种样式"
+}

@@ -1,0 +1,189 @@
+# =====================================
+# 软著AI生成系统 - Git忽略配置
+# =====================================
+
+# ============ 敏感信息与本地运行态 ============
+# 本地真实配置
+config/api_config.json
+config/submit_config.json
+config/browser_session.json
+config/general_settings.json
+config/*.local.json
+config/*.override.json
+gui_config.json
+
+# 账号、会话、队列、日志、运行状态
+data/*
+!data/.gitkeep
+
+# 任务日志单独强调，避免被误提交
+data/task_logs/
+
+# Web 本地环境变量
+web_ui/.env
+web_ui/.env.*
+!web_ui/.env.example
+!web_ui/.env.*.example
+
+# 常见敏感或打包产物
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.csr
+*.kdbx
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Office 二进制文件（公开快照不保留）
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+
+# ============ Python相关 ============
+# 字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 分发/打包
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+.tox/
+.nox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# ============ 项目输出文件 ============
+# 生成的项目文件（这些是临时生成的，不应纳入版本控制）
+output/
+temp_build/
+archive/
+tmp_review_smoke/
+runtime_skills/
+
+# 非核心资源与站点快照（公开仓库建议不提交）
+templates/copyright/
+Auto_Soft_Template/
+templates/temp_docx_extract/
+templates/manual_template - 副本*.docx
+
+# 旧示例与公开快照中不再保留的本地辅助文件
+config.example.py
+config/submit_config.example.json
+
+# 日志文件
+logs/
+*.log
+*.pid
+
+# ============ 工作目录 ============
+# 签名相关临时文件夹
+签名/
+签章页/
+已签名/
+已提交/
+最终提交/
+帮别人做/
+
+# ============ IDE和编辑器 ============
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Claude Code
+.claude/
+
+# ============ 系统文件 ============
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ============ 其他 ============
+# 环境变量文件
+.env
+.env.local
+.env.*
+!.env.example
+!.env.*.example
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
+*.orig
+*.rej
+
+# 备份文件
+*.bak
+*.bak_*
+*.bak.*
+*.backup
+
+# Node / 前端构建
+node_modules/
+web_ui/node_modules/
+web_ui/dist/
+web_ui/.vite/
+web_ui/.cache/
+.parcel-cache/
+.eslintcache
+playwright-report/
+test-results/
+
+# 打包产物
+*.spec.bak
+*.exe
+
+# 本地数据库 / 运行时索引
+*.db
+*.sqlite
+*.sqlite3
+*.jsonl

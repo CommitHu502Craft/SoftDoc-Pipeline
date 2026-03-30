@@ -1,0 +1,77 @@
+name: Bug Report
+description: 报告一个可复现的问题
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请确认：
+        - 你已经阅读 README
+        - 你没有在内容中包含真实密钥、账号、Cookie 或业务数据
+        - 如果是安全问题，请不要公开提交，改走 SECURITY.md 中的渠道
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 问题描述
+      description: 用几句话说明问题现象
+      placeholder: 例如：执行 full pipeline 时在 screenshot 阶段失败
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 按顺序写清楚如何复现
+      placeholder: |
+        1. 执行 ...
+        2. 打开 ...
+        3. 点击 ...
+        4. 观察到报错 ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境信息
+      description: 请填写操作系统、Python 版本、Node 版本、运行入口等
+      placeholder: |
+        OS:
+        Python:
+        Node:
+        Browser:
+        Entry:
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志或截图
+      description: 请只提供脱敏后的日志或截图
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已经确认这里不包含密钥、账号、Cookie 或真实业务数据
+          required: true

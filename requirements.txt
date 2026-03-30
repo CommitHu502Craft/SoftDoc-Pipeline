@@ -1,0 +1,31 @@
+openai>=1.0.0
+requests>=2.32.0
+jinja2>=3.0.0
+playwright>=1.40.0
+PyQt6>=6.6.0
+PyQt6-Fluent-Widgets>=1.5.0
+qasync>=0.24.0
+pdf2image>=1.17.0
+numpy>=1.24.0
+Pillow>=10.0.0
+astor>=0.8.1
+docx2pdf>=0.1.8
+pywin32>=306; sys_platform == 'win32'
+
+# FastAPI 后端依赖
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+websockets>=12.0
+python-multipart>=0.0.6
+
+# 文档生成依赖
+docxtpl>=0.16.0
+python-docx>=1.1.0
+tqdm>=4.66.0
+
+# PDF 生成依赖
+reportlab>=4.0.0
+
+# HTML 解析依赖
+beautifulsoup4>=4.12.0

@@ -1,0 +1,13 @@
+{
+  "theme": "dark",
+  "window_geometry": {
+    "width": 800,
+    "height": 600,
+    "x": 100,
+    "y": 100
+  },
+  "last_api_provider": "deepseek",
+  "auto_refresh": true,
+  "refresh_interval": 5,
+  "_comment": "GUI个人配置文件，首次运行会自动生成"
+}

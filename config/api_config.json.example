@@ -1,0 +1,69 @@
+{
+    "current_provider": "deepseek",
+    "auto_confirm_spec_review": true,
+    "llm_budget": {
+        "total_calls": 120,
+        "total_failures": 32,
+        "cache_ttl_seconds": 1800,
+        "cache_max_entries": 256,
+        "block_calls_per_block": 2,
+        "block_stage_limits": {
+            "default": 200,
+            "plan": 80,
+            "spec": 80,
+            "html": 200,
+            "code": 200,
+            "document": 80,
+            "other": 80
+        },
+        "stages": {
+            "default": 40,
+            "plan": 12,
+            "spec": 8,
+            "html": 24,
+            "code": 72,
+            "document": 16,
+            "other": 16
+        }
+    },
+    "providers": {
+        "deepseek": {
+            "api_key": "YOUR_API_KEY_HERE",
+            "base_url": "https://api.deepseek.com",
+            "model": "deepseek-chat",
+            "fallback_models": ["deepseek-reasoner"],
+            "max_tokens": 8192,
+            "temperature": 0.7,
+            "transport": "auto",
+            "api_style": "chat",
+            "http_retries": 4,
+            "retry_strategy": "full_jitter",
+            "retry_base_delay": 1.2,
+            "retry_delay_cap": 8.0,
+            "retry_max_tokens_cap": 4096,
+            "max_inflight_requests": 0,
+            "min_request_interval_seconds": 0.0,
+            "use_env_proxy": true,
+            "auto_bypass_proxy_on_error": false
+        },
+        "custom": {
+            "api_key": "your-custom-api-key",
+            "base_url": "http://127.0.0.1:8045/v1",
+            "model": "your-model-name",
+            "fallback_model": "your-model-fallback",
+            "max_tokens": 8192,
+            "temperature": 0.7,
+            "transport": "http",
+            "api_style": "chat",
+            "http_retries": 4,
+            "retry_strategy": "full_jitter",
+            "retry_base_delay": 1.2,
+            "retry_delay_cap": 8.0,
+            "retry_max_tokens_cap": 4096,
+            "max_inflight_requests": 0,
+            "min_request_interval_seconds": 0.0,
+            "use_env_proxy": true,
+            "auto_bypass_proxy_on_error": true
+        }
+    }
+}

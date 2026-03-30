@@ -1,0 +1,192 @@
+# SoftDoc Pipeline
+
+[中文说明 (README_cn.md)](README_cn.md)
+
+SoftDoc Pipeline is a public-facing snapshot of an automation pipeline for preparing software copyright application materials. It covers project planning, page/code generation, screenshot evidence, document assembly, and multiple entry points (`CLI`, `API`, `Desktop GUI`, `Web UI`).
+
+## What It Is
+
+Core goals:
+
+- Turn project names and business context into structured project plans.
+- Generate and assemble delivery artifacts (manuals, code materials, screenshots).
+- Run consistency checks and risk gates during the pipeline.
+
+This repository is published mainly for reference, code reading, and portfolio/archive purposes. It is not maintained as a turnkey public service, and it is not a legal guarantee of approval.
+
+## Core Capabilities
+
+- `CLI pipeline`: `plan -> spec -> html -> screenshot -> code -> verify -> document -> pdf -> freeze`
+- `Desktop app`: `PyQt6 + qfluentwidgets`
+- `Web app`: `React + Vite`
+- `Backend API`: `FastAPI + WebSocket`
+- `Code material generation`: business-aligned transformation from seed projects
+- `Page material generation`: HTML output + screenshot evidence
+- `Word/PDF artifacts`: manual and source-code document outputs
+- `Quality gates`: spec/risk checks and runtime validation
+- `Optional extension`: external submission integrations (not a core dependency)
+
+## Project Structure
+
+```text
+.
+├── main.py
+├── run_api.py
+├── gui/
+├── web_ui/
+├── api/
+├── modules/
+├── core/
+├── config/
+├── templates/
+├── seeds/
+├── docs/
+├── tests/
+└── requirements.txt
+```
+
+## Tech Stack
+
+- Python 3.10+
+- FastAPI
+- PyQt6
+- React 19 + Vite + TypeScript
+- Playwright
+- python-docx / docxtpl / reportlab
+
+## Repository Notes
+
+This public repository is primarily intended for source browsing and architecture reference.
+
+- Local configs, runtime data, generated outputs, and historical operator assets are intentionally excluded.
+- Some internal or environment-specific flows may not be directly runnable after sanitization.
+- If you only want to understand the project, start from `README`, `docs/`, `api/`, `modules/`, and `web_ui/`.
+
+## Optional Local Setup
+
+### 1. Install dependencies
+
+```powershell
+uv venv .venv
+.\.venv\Scripts\activate
+uv pip install -r requirements.txt
+playwright install chromium
+```
+
+Alternative (`pip`):
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+playwright install chromium
+```
+
+### 2. Prepare local config
+
+Use example files only, and keep real credentials local:
+
+- `config/api_config.json.example` -> `config/api_config.json`
+- `gui_config.example.json` -> `gui_config.json`
+
+`config.py` is a versioned loader module and is safe to keep public. Real credentials and local state should stay in ignored local JSON files and should not be part of the public snapshot.
+
+### 3. Run services if needed
+
+API:
+
+```powershell
+uv run python run_api.py
+```
+
+Desktop GUI:
+
+```powershell
+uv run python gui/app.py
+```
+
+Web UI:
+
+```powershell
+cd web_ui
+npm install
+npm run dev
+```
+
+### 4. Run pipeline if needed
+
+Full pipeline:
+
+```powershell
+uv run python main.py --project "demo-project" --full-pipeline
+```
+
+Plan only:
+
+```powershell
+uv run python main.py --project "demo-project" --plan-only
+```
+
+## API
+
+- API base: `http://localhost:8000`
+- Swagger: `http://localhost:8000/docs`
+
+Typical API domains:
+
+- Project management
+- Charter/spec management
+- Pipeline execution and task progress
+- UI skill planning and policy auto-fix
+- Pre-submission risk checks
+- Settings and LLM usage metrics
+
+## Output
+
+Artifacts are generated under `output/<project_name>/`, typically including:
+
+- Plan and charter files
+- Executable spec
+- HTML pages and screenshots
+- Aligned code materials
+- Manual `docx/pdf`
+- Source-code `pdf`
+- Risk and validation reports
+- Freeze package
+
+## Development
+
+Run backend tests if you are adapting the code locally:
+
+```powershell
+pytest -q
+```
+
+Build Web UI if you modify the front-end:
+
+```powershell
+cd web_ui
+npm run build
+```
+
+Recommended docs:
+
+- `docs/V2.1_ARCHITECTURE.md`
+- `docs/V2.2_PROCESS_UPGRADE.md`
+- `docs/V3.1_RUNTIME_SKILL_GATE_GUIDE.md`
+
+## Open-Source Safety Checklist
+
+Do not publish:
+
+- Real API keys, cookies, tokens, account passwords
+- Local runtime configs (`config/api_config.json`, `config/submit_config.json`, `config/browser_session.json`)
+- Runtime data (`data/task_logs/`, project/account/runtime state files)
+- Generated outputs (`output/`, `temp_build/`, `logs/`)
+- Any file containing real project/customer/private session data
+
+## Disclaimer
+
+This project improves document generation and validation efficiency. It does not replace legal/compliance review. Final submission responsibility remains with the submitting party.
+
+Repository URL: `https://github.com/CommitHu502Craft/SoftDoc-Pipeline.git`

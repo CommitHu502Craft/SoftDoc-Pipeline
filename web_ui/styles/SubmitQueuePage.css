@@ -1,0 +1,168 @@
+/* 提交队列页面样式 */
+.submit-queue-page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* 控制面板 */
+.control-panel {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.control-panel .form-group {
+  flex: 1;
+  margin: 0;
+}
+
+.control-panel select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.btn-success {
+  background: #10b981;
+  color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #059669;
+}
+
+.running-indicator {
+  color: #10b981;
+  font-weight: 500;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* 队列表格 */
+.queue-list {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.queue-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.queue-table th,
+.queue-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.queue-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.queue-table td {
+  color: var(--text-primary);
+}
+
+.error-cell {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 状态标签 */
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-pending {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+.status-running {
+  background: #3b82f6;
+  color: white;
+}
+
+.status-completed {
+  background: #10b981;
+  color: white;
+}
+
+.status-error {
+  background: #ef4444;
+  color: white;
+}
+
+/* 项目选择 */
+.projects-selection {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 20px 0;
+}
+
+.project-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.project-checkbox:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary-color);
+}
+
+.project-checkbox input[type="checkbox"] {
+  margin-right: 12px;
+}
+
+.project-checkbox span:first-of-type {
+  flex: 1;
+  color: var(--text-primary);
+}
+
+.project-date {
+  color: var(--text-secondary);
+  font-size: 13px;
+}

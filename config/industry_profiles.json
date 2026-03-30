@@ -1,0 +1,432 @@
+{
+  "profiles": {
+    "forestry": {
+      "name": "智慧林业管理系统",
+      "description": "专注于森林资源监管、生态保护与林业产业管理的综合平台",
+      "aliases": ["林业", "森林", "林木", "生态", "林场", "植物", "园林", "forestry", "forest", "wood", "ecology"],
+      "terminology": {
+        "user": "护林员",
+        "admin": "林场管理员",
+        "manager": "林业局干部",
+        "client": "林权所有者",
+        "order": "采伐许可证",
+        "product": "苗木资源",
+        "department": "林业站",
+        "asset": "林地资产",
+        "report": "巡林报告"
+      },
+      "menu_structure": [
+        {
+          "title": "森林资源管理",
+          "icon": "tree",
+          "children": ["小班档案管理", "林木种质资源", "古树名木保护", "碳汇林管理"]
+        },
+        {
+          "title": "林政执法监管",
+          "icon": "shield",
+          "children": ["采伐限额管理", "林地征占用审核", "行政案件处理", "木材运输证"]
+        },
+        {
+          "title": "灾害预警防治",
+          "icon": "fire",
+          "children": ["森林防火监控", "病虫害防治", "气象监测预警", "应急物资调度"]
+        },
+        {
+          "title": "生态监测中心",
+          "icon": "eye",
+          "children": ["野生动物监测", "水土保持监测", "空气质量数据", "生物多样性分析"]
+        }
+      ],
+      "chart_templates": [
+        {
+          "type": "bar",
+          "title": "各林场森林蓄积量统计",
+          "x_axis": ["红星林场", "向阳林场", "大兴林场", "卫国林场", "前哨林场"],
+          "y_axis_name": "蓄积量(万立方米)",
+          "series_name": "蓄积量"
+        },
+        {
+          "type": "pie",
+          "title": "林地权属结构分布",
+          "data": [
+            {"name": "国有林", "value": 45},
+            {"name": "集体林", "value": 30},
+            {"name": "个人林", "value": 25}
+          ]
+        },
+        {
+          "type": "line",
+          "title": "年度森林覆盖率变化趋势",
+          "x_axis": ["2019", "2020", "2021", "2022", "2023"],
+          "y_axis_name": "覆盖率(%)",
+          "series_name": "覆盖率"
+        },
+        {
+          "type": "pie",
+          "title": "森林灾害类型占比",
+          "data": [
+            {"name": "火灾", "value": 15},
+            {"name": "虫害", "value": 45},
+            {"name": "病害", "value": 30},
+            {"name": "鼠害", "value": 10}
+          ]
+        }
+      ],
+      "color_scheme": {
+        "primary": "#2E8B57",
+        "secondary": "#8FBC8F",
+        "accent": "#DAA520",
+        "background": "#F0FFF0"
+      }
+    },
+    "healthcare": {
+      "name": "智慧医疗服务平台",
+      "description": "面向医院、诊所及公共卫生机构的医疗信息管理系统",
+      "aliases": ["医疗", "医院", "健康", "诊所", "医生", "病历", "health", "hospital", "medical", "clinic", "doctor"],
+      "terminology": {
+        "user": "医护人员",
+        "admin": "院务管理员",
+        "manager": "科室主任",
+        "client": "患者",
+        "order": "挂号单",
+        "product": "药品/服务",
+        "department": "科室",
+        "asset": "医疗设备",
+        "report": "诊疗报告"
+      },
+      "menu_structure": [
+        {
+          "title": "门诊诊疗管理",
+          "icon": "user-md",
+          "children": ["患者挂号登记", "门诊医生工作站", "电子病历书写", "处方开具管理"]
+        },
+        {
+          "title": "住院病区管理",
+          "icon": "bed",
+          "children": ["入院登记办理", "床位资源调度", "医嘱执行记录", "出院结算办理"]
+        },
+        {
+          "title": "药房药库管理",
+          "icon": "medkit",
+          "children": ["药品入库验收", "门诊发药系统", "库存盘点预警", "特殊药品监管"]
+        },
+        {
+          "title": "医技检验中心",
+          "icon": "flask",
+          "children": ["检验申请接收", "影像检查报告", "检验结果录入", "样本流转追踪"]
+        }
+      ],
+      "chart_templates": [
+        {
+          "type": "line",
+          "title": "月度门诊量趋势分析",
+          "x_axis": ["1月", "2月", "3月", "4月", "5月", "6月"],
+          "y_axis_name": "就诊人次",
+          "series_name": "人次"
+        },
+        {
+          "type": "pie",
+          "title": "疾病类型分布统计",
+          "data": [
+            {"name": "呼吸系统", "value": 35},
+            {"name": "消化系统", "value": 25},
+            {"name": "心血管", "value": 20},
+            {"name": "内分泌", "value": 20}
+          ]
+        },
+        {
+          "type": "bar",
+          "title": "各科室药品收入对比",
+          "x_axis": ["内科", "外科", "儿科", "妇产科", "五官科"],
+          "y_axis_name": "收入(万元)",
+          "series_name": "收入"
+        }
+      ],
+      "color_scheme": {
+        "primary": "#4682B4",
+        "secondary": "#87CEEB",
+        "accent": "#FF6347",
+        "background": "#F0F8FF"
+      }
+    },
+    "education": {
+      "name": "智慧教育管理平台",
+      "description": "服务于学校、培训机构及教育行政部门的教学教务系统",
+      "aliases": ["教育", "学校", "高校", "教学", "课程", "学生", "校园", "education", "school", "university", "college", "student"],
+      "terminology": {
+        "user": "教师",
+        "admin": "教务管理员",
+        "manager": "校长/院长",
+        "client": "学生/家长",
+        "order": "选课单",
+        "product": "课程",
+        "department": "年级/院系",
+        "asset": "教学设备",
+        "report": "成绩单"
+      },
+      "menu_structure": [
+        {
+          "title": "教务教学管理",
+          "icon": "book",
+          "children": ["课程计划安排", "学生选课管理", "排课课表查询", "考试考务安排"]
+        },
+        {
+          "title": "学生工作管理",
+          "icon": "users",
+          "children": ["学籍档案管理", "奖惩记录管理", "综合素质评价", "宿舍分配管理"]
+        },
+        {
+          "title": "师资队伍建设",
+          "icon": "id-card",
+          "children": ["教师档案维护", "教学评价反馈", "科研成果申报", "培训进修记录"]
+        },
+        {
+          "title": "校园资源服务",
+          "icon": "building",
+          "children": ["教室借用申请", "图书馆藏查询", "实验设备预约", "校园一卡通"]
+        }
+      ],
+      "chart_templates": [
+        {
+          "type": "bar",
+          "title": "各年级平均成绩对比",
+          "x_axis": ["一年级", "二年级", "三年级", "四年级"],
+          "y_axis_name": "平均分",
+          "series_name": "分数"
+        },
+        {
+          "type": "pie",
+          "title": "学生生源地分布",
+          "data": [
+            {"name": "本市", "value": 60},
+            {"name": "省内其他", "value": 25},
+            {"name": "省外", "value": 15}
+          ]
+        },
+        {
+          "type": "line",
+          "title": "近五年招生人数趋势",
+          "x_axis": ["2019", "2020", "2021", "2022", "2023"],
+          "y_axis_name": "人数",
+          "series_name": "招生数"
+        }
+      ],
+      "color_scheme": {
+        "primary": "#4169E1",
+        "secondary": "#6495ED",
+        "accent": "#FFA500",
+        "background": "#F5F5F5"
+      }
+    },
+    "government": {
+      "name": "电子政务办公系统",
+      "description": "面向政府机关、事业单位的行政办公与公共服务平台",
+      "aliases": ["政务", "政府", "办公", "行政", "oa", "机关", "党建", "government", "gov", "admin"],
+      "terminology": {
+        "user": "公务员",
+        "admin": "系统管理员",
+        "manager": "部门领导",
+        "client": "市民/企业",
+        "order": "办件",
+        "product": "服务事项",
+        "department": "处室",
+        "asset": "固定资产",
+        "report": "公文"
+      },
+      "menu_structure": [
+        {
+          "title": "公文流转处理",
+          "icon": "file-text",
+          "children": ["收文登记分发", "发文拟稿审核", "公文签批流程", "电子印章管理"]
+        },
+        {
+          "title": "政务服务受理",
+          "icon": "window-maximize",
+          "children": ["网上办事大厅", "窗口办件登记", "审批进度查询", "服务评价反馈"]
+        },
+        {
+          "title": "内部综合办公",
+          "icon": "briefcase",
+          "children": ["会议室预定", "车辆调度管理", "办公用品申领", "值班排班管理"]
+        },
+        {
+          "title": "督查督办系统",
+          "icon": "check-square",
+          "children": ["重点工作立项", "任务分解下达", "执行进度汇报", "绩效考核评分"]
+        }
+      ],
+      "chart_templates": [
+        {
+          "type": "bar",
+          "title": "本月各处室办件量统计",
+          "x_axis": ["办公室", "人事处", "财务处", "信息中心", "法规处"],
+          "y_axis_name": "件数",
+          "series_name": "办件量"
+        },
+        {
+          "type": "pie",
+          "title": "民生诉求类型占比",
+          "data": [
+            {"name": "城市管理", "value": 30},
+            {"name": "环境保护", "value": 20},
+            {"name": "交通出行", "value": 25},
+            {"name": "其他", "value": 25}
+          ]
+        },
+        {
+          "type": "line",
+          "title": "网上办事大厅访问量趋势",
+          "x_axis": ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          "y_axis_name": "访问次数",
+          "series_name": "PV"
+        }
+      ],
+      "color_scheme": {
+        "primary": "#B22222",
+        "secondary": "#CD5C5C",
+        "accent": "#FFD700",
+        "background": "#FFFAFA"
+      }
+    },
+    "ecommerce": {
+      "name": "电子商务运营平台",
+      "description": "支持B2B/B2C模式的在线交易、库存与客户管理系统",
+      "aliases": ["电商", "商城", "零售", "购物", "店铺", "交易", "ecommerce", "shop", "store", "retail", "mall"],
+      "terminology": {
+        "user": "运营专员",
+        "admin": "商城管理员",
+        "manager": "店长",
+        "client": "会员",
+        "order": "订单",
+        "product": "商品",
+        "department": "运营组",
+        "asset": "库存",
+        "report": "销售报表"
+      },
+      "menu_structure": [
+        {
+          "title": "商品运营中心",
+          "icon": "shopping-bag",
+          "children": ["商品发布上架", "品牌类目管理", "规格属性设置", "库存预警监控"]
+        },
+        {
+          "title": "订单交易处理",
+          "icon": "shopping-cart",
+          "children": ["订单查询确认", "发货物流跟踪", "退款售后处理", "评价投诉管理"]
+        },
+        {
+          "title": "营销推广活动",
+          "icon": "gift",
+          "children": ["优惠券管理", "限时秒杀设置", "满减活动配置", "会员积分兑换"]
+        },
+        {
+          "title": "客户关系维护",
+          "icon": "users",
+          "children": ["会员等级管理", "客户画像分析", "短信营销发送", "在线客服系统"]
+        }
+      ],
+      "chart_templates": [
+        {
+          "type": "line",
+          "title": "近7天销售额走势",
+          "x_axis": ["1日", "2日", "3日", "4日", "5日", "6日", "7日"],
+          "y_axis_name": "金额(元)",
+          "series_name": "销售额"
+        },
+        {
+          "type": "pie",
+          "title": "热销商品类目占比",
+          "data": [
+            {"name": "数码家电", "value": 35},
+            {"name": "服饰鞋包", "value": 30},
+            {"name": "日用百货", "value": 20},
+            {"name": "美妆个护", "value": 15}
+          ]
+        },
+        {
+          "type": "bar",
+          "title": "各渠道用户来源统计",
+          "x_axis": ["自然搜索", "社交媒体", "直接访问", "外部链接", "广告投放"],
+          "y_axis_name": "用户数",
+          "series_name": "UV"
+        }
+      ],
+      "color_scheme": {
+        "primary": "#FF8C00",
+        "secondary": "#FFA500",
+        "accent": "#FF4500",
+        "background": "#FFF5E6"
+      }
+    },
+    "general": {
+      "name": "通用企业管理系统",
+      "description": "适用于大多数企业的标准化管理系统",
+      "aliases": ["general", "default", "common"],
+      "terminology": {
+        "user": "用户",
+        "admin": "管理员",
+        "manager": "经理",
+        "client": "客户",
+        "order": "订单",
+        "product": "产品",
+        "department": "部门",
+        "asset": "资产",
+        "report": "报表"
+      },
+      "menu_structure": [
+        {
+          "title": "系统基础管理",
+          "icon": "setting",
+          "children": ["用户权限设置", "部门组织架构", "系统参数配置", "操作日志审计"]
+        },
+        {
+          "title": "业务流程中心",
+          "icon": "branches",
+          "children": ["待办事项处理", "业务申请发起", "流程审批进度", "历史记录查询"]
+        },
+        {
+          "title": "数据报表分析",
+          "icon": "bar-chart",
+          "children": ["综合数据概览", "业务统计报表", "趋势分析图表", "导出打印中心"]
+        },
+        {
+          "title": "消息通知服务",
+          "icon": "bell",
+          "children": ["系统公告发布", "内部消息提醒", "邮件短信设置", "即时通讯记录"]
+        }
+      ],
+      "chart_templates": [
+        {
+          "type": "line",
+          "title": "系统访问量统计",
+          "x_axis": ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          "y_axis_name": "访问次数",
+          "series_name": "PV"
+        },
+        {
+          "type": "bar",
+          "title": "各部门活跃度排行",
+          "x_axis": ["销售部", "技术部", "人事部", "财务部", "市场部"],
+          "y_axis_name": "操作次数",
+          "series_name": "活跃度"
+        },
+        {
+          "type": "pie",
+          "title": "业务数据分布",
+          "data": [
+            {"name": "类型A", "value": 40},
+            {"name": "类型B", "value": 30},
+            {"name": "类型C", "value": 20},
+            {"name": "其他", "value": 10}
+          ]
+        }
+      ],
+      "color_scheme": {
+        "primary": "#1890FF",
+        "secondary": "#40A9FF",
+        "accent": "#FAAD14",
+        "background": "#FFFFFF"
+      }
+    }
+  }
+}

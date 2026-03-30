@@ -1,0 +1,401 @@
+{
+  "languages": {
+    "Java": {
+      "framework": "Spring Boot",
+      "file_ext": ".java",
+      "comment_style": "javadoc",
+      "version": "17+",
+      "build_tool": "Maven",
+      "package_prefix": "com.example"
+    },
+    "Go": {
+      "framework": "Gin",
+      "file_ext": ".go",
+      "comment_style": "godoc",
+      "version": "1.20+",
+      "build_tool": "Go Modules",
+      "package_prefix": "main"
+    },
+    "Python": {
+      "framework": "FastAPI",
+      "file_ext": ".py",
+      "comment_style": "docstring",
+      "version": "3.9+",
+      "build_tool": "pip",
+      "package_prefix": "app"
+    },
+    "Node.js": {
+      "framework": "Express",
+      "file_ext": ".js",
+      "comment_style": "jsdoc",
+      "version": "16+",
+      "build_tool": "npm",
+      "package_prefix": "src"
+    },
+    "PHP": {
+      "framework": "Laravel",
+      "file_ext": ".php",
+      "comment_style": "phpdoc",
+      "version": "8.1+",
+      "build_tool": "Composer",
+      "package_prefix": "App"
+    }
+  },
+
+  "ui_frameworks": {
+    "Tailwind": {
+      "cdn_url": "https://cdn.tailwindcss.com",
+      "class_prefix": "",
+      "version": "3.3.0",
+      "description": "实用优先的CSS框架",
+      "features": ["响应式设计", "深色模式", "自定义主题"],
+      "grid_system": "flex/grid"
+    },
+    "Bootstrap": {
+      "cdn_url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+      "class_prefix": "",
+      "version": "5.3.0",
+      "description": "流行的前端工具包",
+      "features": ["组件丰富", "栅格系统", "响应式"],
+      "grid_system": "12-column"
+    }
+  },
+
+  "layout_modes": {
+    "sidebar-left": {
+      "description": "左侧边栏导航",
+      "structure": "vertical-nav-left",
+      "suitable_for": ["管理后台", "数据平台", "CMS系统"],
+      "sidebar_width": "240px"
+    },
+    "sidebar-right": {
+      "description": "右侧边栏导航",
+      "structure": "vertical-nav-right",
+      "suitable_for": ["内容展示", "文档系统", "阅读应用"],
+      "sidebar_width": "260px"
+    },
+    "topbar": {
+      "description": "顶部水平导航",
+      "structure": "horizontal-nav-top",
+      "suitable_for": ["企业官网", "营销页面", "门户网站"],
+      "topbar_height": "60px"
+    },
+    "mixed": {
+      "description": "顶部+左侧混合导航",
+      "structure": "hybrid-nav",
+      "suitable_for": ["大型系统", "多功能平台", "企业应用"],
+      "topbar_height": "60px",
+      "sidebar_width": "220px"
+    }
+  },
+
+  "color_palettes": [
+    {
+      "name": "ocean",
+      "description": "海洋蓝 - 专业稳重",
+      "primary": "hsl(210, 79%, 46%)",
+      "secondary": "hsl(199, 89%, 48%)",
+      "accent": "hsl(187, 100%, 42%)",
+      "background": "hsl(210, 17%, 98%)",
+      "text": "hsl(210, 24%, 16%)",
+      "border": "hsl(210, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["金融", "科技", "医疗"]
+    },
+    {
+      "name": "forest",
+      "description": "森林绿 - 自然生态",
+      "primary": "hsl(142, 71%, 45%)",
+      "secondary": "hsl(122, 39%, 49%)",
+      "accent": "hsl(158, 64%, 52%)",
+      "background": "hsl(120, 25%, 98%)",
+      "text": "hsl(120, 24%, 16%)",
+      "border": "hsl(120, 14%, 89%)",
+      "success": "hsl(134, 61%, 41%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["农业", "环保", "林业"]
+    },
+    {
+      "name": "amethyst",
+      "description": "紫水晶 - 创意优雅",
+      "primary": "hsl(262, 52%, 47%)",
+      "secondary": "hsl(291, 47%, 51%)",
+      "accent": "hsl(280, 61%, 50%)",
+      "background": "hsl(270, 20%, 98%)",
+      "text": "hsl(270, 24%, 16%)",
+      "border": "hsl(270, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["设计", "教育", "艺术"]
+    },
+    {
+      "name": "sunset",
+      "description": "日落橙 - 活力热情",
+      "primary": "hsl(27, 98%, 54%)",
+      "secondary": "hsl(14, 100%, 57%)",
+      "accent": "hsl(45, 93%, 47%)",
+      "background": "hsl(30, 30%, 98%)",
+      "text": "hsl(30, 24%, 16%)",
+      "border": "hsl(30, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["餐饮", "娱乐", "电商"]
+    },
+    {
+      "name": "cyan",
+      "description": "青蓝色 - 清新现代",
+      "primary": "hsl(187, 100%, 42%)",
+      "secondary": "hsl(173, 58%, 39%)",
+      "accent": "hsl(180, 77%, 47%)",
+      "background": "hsl(180, 25%, 98%)",
+      "text": "hsl(180, 24%, 16%)",
+      "border": "hsl(180, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["科技", "互联网", "云服务"]
+    },
+    {
+      "name": "ruby",
+      "description": "红宝石 - 激情力量",
+      "primary": "hsl(348, 83%, 47%)",
+      "secondary": "hsl(0, 65%, 51%)",
+      "accent": "hsl(338, 82%, 52%)",
+      "background": "hsl(350, 20%, 98%)",
+      "text": "hsl(350, 24%, 16%)",
+      "border": "hsl(350, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["体育", "传媒", "活动"]
+    },
+    {
+      "name": "slate",
+      "description": "板岩灰 - 简约商务",
+      "primary": "hsl(215, 16%, 47%)",
+      "secondary": "hsl(215, 14%, 34%)",
+      "accent": "hsl(215, 20%, 65%)",
+      "background": "hsl(210, 20%, 98%)",
+      "text": "hsl(215, 25%, 27%)",
+      "border": "hsl(214, 15%, 91%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["咨询", "法律", "企业服务"]
+    },
+    {
+      "name": "emerald",
+      "description": "翡翠绿 - 高端品质",
+      "primary": "hsl(160, 84%, 39%)",
+      "secondary": "hsl(158, 64%, 52%)",
+      "accent": "hsl(152, 69%, 31%)",
+      "background": "hsl(160, 25%, 98%)",
+      "text": "hsl(160, 24%, 16%)",
+      "border": "hsl(160, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["奢侈品", "高端制造", "珠宝"]
+    },
+    {
+      "name": "indigo",
+      "description": "靛蓝色 - 科技创新",
+      "primary": "hsl(231, 48%, 48%)",
+      "secondary": "hsl(243, 47%, 59%)",
+      "accent": "hsl(221, 83%, 53%)",
+      "background": "hsl(230, 20%, 98%)",
+      "text": "hsl(230, 24%, 16%)",
+      "border": "hsl(230, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["AI", "区块链", "智能硬件"]
+    },
+    {
+      "name": "rose",
+      "description": "玫瑰粉 - 温馨柔美",
+      "primary": "hsl(330, 81%, 60%)",
+      "secondary": "hsl(338, 82%, 52%)",
+      "accent": "hsl(320, 70%, 50%)",
+      "background": "hsl(330, 25%, 98%)",
+      "text": "hsl(330, 24%, 16%)",
+      "border": "hsl(330, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["美妆", "母婴", "时尚"]
+    },
+    {
+      "name": "amber",
+      "description": "琥珀金 - 典雅奢华",
+      "primary": "hsl(45, 93%, 47%)",
+      "secondary": "hsl(38, 92%, 50%)",
+      "accent": "hsl(32, 95%, 44%)",
+      "background": "hsl(45, 25%, 98%)",
+      "text": "hsl(45, 24%, 16%)",
+      "border": "hsl(45, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["酒店", "地产", "投资"]
+    },
+    {
+      "name": "teal",
+      "description": "青绿色 - 平衡和谐",
+      "primary": "hsl(173, 80%, 40%)",
+      "secondary": "hsl(180, 77%, 47%)",
+      "accent": "hsl(168, 76%, 36%)",
+      "background": "hsl(173, 25%, 98%)",
+      "text": "hsl(173, 24%, 16%)",
+      "border": "hsl(173, 14%, 89%)",
+      "success": "hsl(142, 71%, 45%)",
+      "warning": "hsl(45, 93%, 47%)",
+      "error": "hsl(0, 65%, 51%)",
+      "industry_fit": ["健康", "养生", "瑜伽"]
+    }
+  ],
+
+  "narrative_styles": {
+    "technical": {
+      "description": "技术导向风格",
+      "tone": "专业、精确、术语丰富",
+      "sentence_structure": "简洁明了",
+      "vocabulary_level": "专业术语",
+      "suitable_for": ["技术文档", "API文档", "架构说明"]
+    },
+    "business": {
+      "description": "商业导向风格",
+      "tone": "正式、权威、价值导向",
+      "sentence_structure": "条理清晰",
+      "vocabulary_level": "商务用语",
+      "suitable_for": ["商业计划", "产品说明", "用户手册"]
+    },
+    "tutorial": {
+      "description": "教程导向风格",
+      "tone": "友好、详细、循序渐进",
+      "sentence_structure": "分步说明",
+      "vocabulary_level": "通俗易懂",
+      "suitable_for": ["操作指南", "培训材料", "入门教程"]
+    }
+  },
+
+  "database_types": {
+    "MySQL": {
+      "version": "8.0+",
+      "type": "关系型数据库",
+      "features": ["事务支持", "高性能", "成熟稳定"]
+    },
+    "PostgreSQL": {
+      "version": "14+",
+      "type": "关系型数据库",
+      "features": ["高级特性", "扩展性强", "JSON支持"]
+    },
+    "MongoDB": {
+      "version": "6.0+",
+      "type": "文档型数据库",
+      "features": ["灵活模式", "横向扩展", "高性能"]
+    },
+    "Redis": {
+      "version": "7.0+",
+      "type": "内存数据库",
+      "features": ["极速缓存", "数据结构丰富", "发布订阅"]
+    }
+  },
+
+  "deployment_modes": {
+    "docker": {
+      "description": "Docker容器化部署",
+      "complexity": "中",
+      "scalability": "高"
+    },
+    "kubernetes": {
+      "description": "K8s编排部署",
+      "complexity": "高",
+      "scalability": "很高"
+    },
+    "traditional": {
+      "description": "传统服务器部署",
+      "complexity": "低",
+      "scalability": "中"
+    },
+    "serverless": {
+      "description": "无服务器部署",
+      "complexity": "中",
+      "scalability": "高"
+    }
+  },
+
+  "architecture_patterns": {
+    "mvc": {
+      "name": "MVC模式",
+      "description": "模型-视图-控制器",
+      "complexity": "低",
+      "suitable_for": ["传统Web应用", "管理系统"]
+    },
+    "microservices": {
+      "name": "微服务架构",
+      "description": "服务拆分与独立部署",
+      "complexity": "高",
+      "suitable_for": ["大型系统", "高并发场景"]
+    },
+    "layered": {
+      "name": "分层架构",
+      "description": "表现层-业务层-数据层",
+      "complexity": "中",
+      "suitable_for": ["企业应用", "业务系统"]
+    },
+    "event-driven": {
+      "name": "事件驱动架构",
+      "description": "基于事件的异步处理",
+      "complexity": "中高",
+      "suitable_for": ["实时系统", "消息处理"]
+    }
+  },
+
+  "code_quality_settings": {
+    "comment_density": {
+      "low": 0.1,
+      "medium": 0.2,
+      "high": 0.3
+    },
+    "naming_conventions": {
+      "camelCase": "驼峰命名",
+      "snake_case": "蛇形命名",
+      "PascalCase": "帕斯卡命名",
+      "kebab-case": "短横线命名"
+    },
+    "indentation": {
+      "spaces": 4,
+      "tabs": 1
+    }
+  },
+
+  "design_systems": {
+    "Enterprise": {
+      "description": "企业级风格 - 紧凑、专业",
+      "border_radius": "2px",
+      "shadow_style": "none",
+      "spacing_unit": "0.8rem",
+      "font_family": "Roboto, 'Helvetica Neue', Arial, sans-serif"
+    },
+    "SaaS": {
+      "description": "现代SaaS风格 - 宽松、圆润",
+      "border_radius": "12px",
+      "shadow_style": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "spacing_unit": "1rem",
+      "font_family": "'Inter', system-ui, -apple-system, sans-serif"
+    },
+    "Data": {
+      "description": "数据大屏风格 - 高对比、科技感",
+      "border_radius": "0",
+      "shadow_style": "0 0 10px rgba(0, 255, 255, 0.3)",
+      "spacing_unit": "1.2rem",
+      "font_family": "'Fira Code', 'Courier New', monospace"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Report
+    url: https://github.com/CommitHu502Craft
+    about: 安全问题请不要公开提交 issue，请改走 SECURITY.md 中说明的私下渠道
