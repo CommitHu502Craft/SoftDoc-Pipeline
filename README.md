@@ -26,6 +26,22 @@ This repository is published mainly for reference, code reading, and portfolio/a
 - `Quality gates`: spec/risk checks and runtime validation
 - `Optional extension`: external submission integrations (not a core dependency)
 
+## Pipeline Overview
+
+```mermaid
+flowchart LR
+    A[Project Name / Business Context]
+    B[Planning]
+    C[Executable Spec]
+    D[HTML / Page Generation]
+    E[Screenshot Evidence]
+    F[Code Material Generation]
+    G[Validation]
+    H[Document / PDF Assembly]
+
+    A --> B --> C --> D --> E --> F --> G --> H
+```
+
 ## Project Structure
 
 ```text
