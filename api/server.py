@@ -121,14 +121,14 @@ _apply_runtime_general_settings(_load_general_settings())
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """应用生命周期管理"""
-    logger.info("软著AI生成系统 API 启动中...")
+    logger.info("SoftDoc Pipeline API starting...")
     yield
     logger.info("API 关闭")
 
 
 app = FastAPI(
-    title="软著AI生成系统 API",
-    description="自动化软著申请材料生成系统后端接口",
+    title="SoftDoc Pipeline API",
+    description="Backend API for the public SoftDoc Pipeline snapshot.",
     version="3.0.0",
     lifespan=lifespan
 )

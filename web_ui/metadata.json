@@ -1,5 +1,5 @@
 {
-  "name": "软著AI生成系统",
-  "description": "基于AI的现代化软件著作权申请生成系统，支持自动生成说明书与代码、自动提交申请以及电子签章处理。",
+  "name": "SoftDoc Pipeline",
+  "description": "Public snapshot Web UI for planning, generation, validation, and submission-oriented workflow inspection.",
   "requestFramePermissions": []
 }
