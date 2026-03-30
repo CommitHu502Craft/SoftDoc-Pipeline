@@ -135,6 +135,55 @@ flowchart LR
 - `modules/document_generator.py`
 - `web_ui/`
 
+## 无密钥快速预览
+
+如果你当前只是想安全地看一遍公开仓库，优先走下面这条路径。它不依赖真实 API Key、提交账号、浏览器会话或私有模板。
+
+### 推荐预览路径
+
+1. 安装 Python 依赖：
+
+```powershell
+uv venv .venv
+.\.venv\Scripts\activate
+uv pip install -r requirements.txt
+```
+
+2. 只启动 API 并查看 Swagger：
+
+```powershell
+uv run python run_api.py
+```
+
+然后访问 `http://localhost:8000/docs`。
+
+3. 如有需要，再验证公开版 Web UI 是否能构建：
+
+```powershell
+cd web_ui
+npm install
+npm run build
+```
+
+4. 如有需要，再跑公开安全的测试子集：
+
+```powershell
+pytest tests/test_config.py tests/test_api_settings_safety.py tests/test_llm_budget.py -q
+```
+
+如果你的目标只是预览，到这里就可以停。完整流水线、文档导出和提交相关能力通常还需要额外的本地配置。
+
+## 平台支持
+
+| 入口 / 能力 | Windows | macOS | Linux | 说明 |
+| --- | --- | --- | --- | --- |
+| API 文档预览 | 良好 | 良好 | 良好 | 最适合公开仓库阅读者的安全入口。 |
+| Web UI 构建 / 预览 | 良好 | 良好 | 良好 | `npm run build` 是最稳的公开验证方式。 |
+| CLI 完整流水线 | 部分支持 | 部分支持 | 部分支持 | 通常仍需要本地 API 配置和环境重建。 |
+| 桌面 GUI | 最佳 | 部分支持 | 部分支持 | 维护和使用习惯明显更偏 Windows。 |
+| 文档 / PDF 导出 | 最佳 | 有限 | 有限 | 部分导出链路更偏 Windows 环境。 |
+| 提交 / 签章相关流程 | 仅本地 | 仅本地 | 仅本地 | 依赖私有账号、浏览器状态和操作环境。 |
+
 ## 仓库说明
 
 这个公开仓库主要用于展示源码与结构，而不是保证可直接运行。
@@ -177,6 +226,19 @@ playwright install chromium
 - `config/api_config.json.example` -> `config/api_config.json`
 - `gui_config.example.json` -> `gui_config.json`
 
+公开示例文件：
+
+- `config/api_config.json.example`：版本化保留的 provider / budget 示例，只用于本地复制
+- `gui_config.example.json`：和当前公开版默认行为对齐的 GUI 偏好示例
+
+仅应保留在本地的运行态文件：
+
+- `config/api_config.json`
+- `config/general_settings.json`
+- `config/submit_config.json`
+- `config/browser_session.json`
+- `gui_config.json`
+
 `config.py` 本身是仓库内版本化的加载模块，可以公开；真实密钥、账号和本地运行状态应只保留在本地已忽略的 JSON 文件中，不应进入公开快照。
 
 至少需要检查：
@@ -209,6 +271,8 @@ npm run dev
 ```
 
 ### 4. 如有需要再执行 CLI 流水线
+
+下面这些命令通常需要本地有效的 API 配置，不属于上面的“无密钥快速预览”路径。
 
 完整流水线：
 

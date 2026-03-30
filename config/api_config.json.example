@@ -1,4 +1,5 @@
 {
+    "_comment": "Public example only. Copy to config/api_config.json for local use and keep the real runtime file untracked.",
     "current_provider": "deepseek",
     "auto_confirm_spec_review": true,
     "llm_budget": {
@@ -47,10 +48,10 @@
             "auto_bypass_proxy_on_error": false
         },
         "custom": {
-            "api_key": "your-custom-api-key",
+            "api_key": "YOUR_CUSTOM_API_KEY_HERE",
             "base_url": "http://127.0.0.1:8045/v1",
-            "model": "your-model-name",
-            "fallback_model": "your-model-fallback",
+            "model": "YOUR_LOCAL_MODEL_NAME",
+            "fallback_models": ["YOUR_LOCAL_FALLBACK_MODEL"],
             "max_tokens": 8192,
             "temperature": 0.7,
             "transport": "http",

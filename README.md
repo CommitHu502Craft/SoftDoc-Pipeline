@@ -106,6 +106,55 @@ If you only want to understand the system, start from:
 - `modules/document_generator.py`
 - `web_ui/`
 
+## No-Secret Quickstart
+
+If you only want a safe preview route, use this path first. It avoids real API keys, submission accounts, browser sessions, and private templates.
+
+### Preferred preview path
+
+1. Install Python dependencies:
+
+```powershell
+uv venv .venv
+.\.venv\Scripts\activate
+uv pip install -r requirements.txt
+```
+
+2. Start the API and inspect Swagger only:
+
+```powershell
+uv run python run_api.py
+```
+
+Then open `http://localhost:8000/docs`.
+
+3. Optionally verify the public Web UI build:
+
+```powershell
+cd web_ui
+npm install
+npm run build
+```
+
+4. Optionally run the public-safe regression subset:
+
+```powershell
+pytest tests/test_config.py tests/test_api_settings_safety.py tests/test_llm_budget.py -q
+```
+
+Stop here if your goal is inspection only. Full pipeline generation, document export, and submission-related flows usually require additional local-only configuration.
+
+## Platform Support
+
+| Surface | Windows | macOS | Linux | Notes |
+| --- | --- | --- | --- | --- |
+| API docs preview | Good | Good | Good | Safe inspection path; does not require running private submission flows. |
+| Web UI build / preview | Good | Good | Good | `npm run build` is the safest public check. |
+| CLI full pipeline | Partial | Partial | Partial | Usually needs local API config and environment reconstruction. |
+| Desktop GUI | Best | Partial | Partial | Most maintained in Windows-oriented local workflows. |
+| Document / PDF export | Best | Limited | Limited | Some export paths are more Windows-friendly. |
+| Submission / signature flows | Local only | Local only | Local only | Depends on private accounts, browser state, and operator setup. |
+
 ## Repository Notes
 
 This public repository is primarily intended for source browsing and architecture reference.
@@ -148,6 +197,19 @@ Use example files only, and keep real credentials local:
 - `config/api_config.json.example` -> `config/api_config.json`
 - `gui_config.example.json` -> `gui_config.json`
 
+Public example files:
+
+- `config/api_config.json.example`: versioned provider + budget example for local copy only
+- `gui_config.example.json`: versioned GUI preference example aligned with the current public snapshot
+
+Local-only runtime files:
+
+- `config/api_config.json`
+- `config/general_settings.json`
+- `config/submit_config.json`
+- `config/browser_session.json`
+- `gui_config.json`
+
 `config.py` is a versioned loader module and is safe to keep public. Real credentials and local state should stay in ignored local JSON files and should not be part of the public snapshot.
 
 ### 3. Run services if needed
@@ -173,6 +235,8 @@ npm run dev
 ```
 
 ### 4. Run pipeline if needed
+
+The commands below usually require a valid local API configuration. They are not part of the no-secret preview route above.
 
 Full pipeline:
 
