@@ -62,6 +62,26 @@ Quick entry points:
 - CLI preview: `uv run python main.py --project "demo-project" --plan-only`
 - Web UI preview: `cd web_ui && npm install && npm run dev`
 
+Sanitized screenshots from the public snapshot:
+
+<p>
+  <img src="docs/demo/web-project-management.png" alt="Web project management" width="48%" />
+  <img src="docs/demo/web-auto-submission.png" alt="Web auto submission" width="48%" />
+</p>
+<p>
+  <img src="docs/demo/web-settings.png" alt="Web settings" width="48%" />
+  <img src="docs/demo/web-signature-management.png" alt="Web signature management" width="48%" />
+</p>
+<p>
+  <img src="docs/demo/web-llm-usage-monitor.png" alt="Web LLM usage monitor" width="48%" />
+  <img src="docs/demo/desktop-home.png" alt="Desktop home" width="48%" />
+</p>
+<p>
+  <img src="docs/demo/desktop-project-management.png" alt="Desktop project management" width="48%" />
+</p>
+
+These images are sanitized for repository presentation only and do not represent a production environment.
+
 If you only want to understand the system, start from:
 
 - `docs/V2.1_ARCHITECTURE.md`

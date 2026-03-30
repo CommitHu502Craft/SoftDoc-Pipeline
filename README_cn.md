@@ -91,6 +91,26 @@ SoftDoc Pipeline 是一个面向软件著作权申报材料整理场景的公开
 - CLI 预览：`uv run python main.py --project "demo-project" --plan-only`
 - Web UI 预览：`cd web_ui && npm install && npm run dev`
 
+下面这组截图来自公开版的脱敏演示画面：
+
+<p>
+  <img src="docs/demo/web-project-management.png" alt="Web 项目管理" width="48%" />
+  <img src="docs/demo/web-auto-submission.png" alt="Web 自动提交" width="48%" />
+</p>
+<p>
+  <img src="docs/demo/web-settings.png" alt="Web 系统设置" width="48%" />
+  <img src="docs/demo/web-signature-management.png" alt="Web 签章管理" width="48%" />
+</p>
+<p>
+  <img src="docs/demo/web-llm-usage-monitor.png" alt="Web LLM 使用量监控" width="48%" />
+  <img src="docs/demo/desktop-home.png" alt="桌面端首页" width="48%" />
+</p>
+<p>
+  <img src="docs/demo/desktop-project-management.png" alt="桌面端项目管理" width="48%" />
+</p>
+
+这些截图仅用于公开仓库展示，不代表生产环境，也不包含真实账号、真实项目或运行态数据。
+
 如果你只是想判断这个项目值不值得继续读，建议优先看：
 
 - `docs/V2.1_ARCHITECTURE.md`
