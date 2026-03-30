@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("软著AI生成系统 - API 服务器")
+    print("SoftDoc Pipeline - API Server")
     print("=" * 60)
     print()
     print("API 地址: http://localhost:8000")

@@ -1,6 +1,6 @@
 """
 GUI Application Entry Point
-软著AI自动化生成系统 - 桌面客户端
+SoftDoc Pipeline - Desktop Client
 """
 import sys
 import os
@@ -42,8 +42,8 @@ def main():
     
     _setup_qt_font_dir()
     app = QApplication(sys.argv)
-    app.setApplicationName("软著AI生成系统")
-    app.setOrganizationName("SoftwareCopyrightAI")
+    app.setApplicationName("SoftDoc Pipeline")
+    app.setOrganizationName("CommitHu502Craft")
     
     # 设置主题
     theme = config_manager.get("theme", "dark")
