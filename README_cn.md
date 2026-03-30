@@ -47,8 +47,6 @@ SoftDoc Pipeline 是一个面向软件著作权申报材料整理场景的公开
 ├── modules/                   # 核心业务模块
 ├── core/                      # 基础设施与通用执行层
 ├── config/                    # JSON 配置模板与运行配置
-├── templates/                 # Word / HTML 模板资源
-├── seeds/                     # 多语言种子代码
 ├── docs/                      # 架构与流程文档
 ├── tests/                     # 自动化测试
 └── requirements.txt           # Python 依赖
@@ -66,10 +64,6 @@ SoftDoc Pipeline 是一个面向软件著作权申报材料整理场景的公开
   桌面客户端，适合本地操作与人工校验。
 - `web_ui/`
   Web 界面，适合前后端分离部署或局域网协作。
-- `templates/`
-  说明书模板、HTML 模板及相关静态资源。
-- `seeds/`
-  多语言种子项目，供代码材料生成链路使用。
 - `docs/`
   保存架构设计和版本演进文档，适合二次开发前阅读。
 
@@ -87,6 +81,24 @@ SoftDoc Pipeline 是一个面向软件著作权申报材料整理场景的公开
 - `docx2pdf` 和部分 GUI 能力在 Windows 上体验更完整
 - 如果只运行 API 或部分生成流程，非 Windows 环境也可按需裁剪
 
+## Demo
+
+这个公开仓库不提供线上 Demo，当前更适合做源码浏览、结构理解和轻量本地预览。
+
+如果你只想快速看入口，可直接用下面几种方式：
+
+- API 预览：`uv run python run_api.py`，然后访问 `http://localhost:8000/docs`
+- CLI 预览：`uv run python main.py --project "demo-project" --plan-only`
+- Web UI 预览：`cd web_ui && npm install && npm run dev`
+
+如果你只是想判断这个项目值不值得继续读，建议优先看：
+
+- `docs/V2.1_ARCHITECTURE.md`
+- `api/server.py`
+- `modules/project_planner.py`
+- `modules/document_generator.py`
+- `web_ui/`
+
 ## 仓库说明
 
 这个公开仓库主要用于展示源码与结构，而不是保证可直接运行。
@@ -94,6 +106,13 @@ SoftDoc Pipeline 是一个面向软件著作权申报材料整理场景的公开
 - 本地配置、运行态数据、生成产物和历史操作资产已按公开仓库标准做了剥离或忽略。
 - 因为做过脱敏与裁剪，部分流程即使保留代码，也不保证可以直接复现原始环境。
 - 如果你只是想了解项目，建议优先阅读 `README`、`docs/`、`api/`、`modules/` 和 `web_ui/`。
+
+## Roadmap
+
+- 补一套更小、更安全的 Demo 样例，方便公开阅读者理解输出形态。
+- 把更多历史内部命名替换成公开名称 `SoftDoc Pipeline`。
+- 给 CLI、API、Web UI 增加更稳定的公开 CI 冒烟检查。
+- 继续把运行态提交流程逻辑和可复用流水线能力拆分得更清楚。
 
 ## 可选本地运行
 
@@ -212,6 +231,13 @@ uv run python main.py --project "示例项目" --plan-only
 - 风险检查与校验报告
 - 冻结归档包
 
+## 已知限制
+
+- 因为公开版已经去掉了本地配置、运行态数据、私有模板和操作资产，所以不少流程不能直接端到端跑通。
+- 仓库里保留了部分提交流程相关源码，但这些能力依赖私有账号、浏览器会话或特定环境，不属于公开即用能力。
+- 部分文档生成和 GUI 路径仍然更偏 Windows 环境。
+- 虽然 README 已做公开化整理，但代码注释、包名和少量界面文案里仍能看到历史项目名。
+
 ## 测试与开发
 
 如果你需要本地改造代码，可运行后端测试：
@@ -267,5 +293,9 @@ npm run build
 ## 免责声明
 
 本项目用于提高材料整理、生成与校验效率，不构成法律、合规或申报结果承诺。任何对外提交的材料都应进行人工复核，并由提交方自行承担真实性与合规性责任。
+
+## 许可证
+
+本仓库采用 MIT License，详见 `LICENSE`。
 
 仓库地址：`https://github.com/CommitHu502Craft/SoftDoc-Pipeline.git`

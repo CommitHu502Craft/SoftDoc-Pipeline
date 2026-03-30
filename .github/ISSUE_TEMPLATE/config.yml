@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Contribution Guide
+    url: https://github.com/CommitHu502Craft/SoftDoc-Pipeline/blob/main/CONTRIBUTING.md
+    about: 提交 issue 或 PR 前，请先阅读贡献说明
   - name: Security Report
     url: https://github.com/CommitHu502Craft
     about: 安全问题请不要公开提交 issue，请改走 SECURITY.md 中说明的私下渠道

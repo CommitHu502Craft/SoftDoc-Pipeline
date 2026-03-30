@@ -38,8 +38,6 @@ This repository is published mainly for reference, code reading, and portfolio/a
 ├── modules/
 ├── core/
 ├── config/
-├── templates/
-├── seeds/
 ├── docs/
 ├── tests/
 └── requirements.txt
@@ -54,6 +52,24 @@ This repository is published mainly for reference, code reading, and portfolio/a
 - Playwright
 - python-docx / docxtpl / reportlab
 
+## Demo
+
+This repository does not provide a hosted demo. The public snapshot is meant for source browsing and light local inspection.
+
+Quick entry points:
+
+- API preview: `uv run python run_api.py`, then open `http://localhost:8000/docs`
+- CLI preview: `uv run python main.py --project "demo-project" --plan-only`
+- Web UI preview: `cd web_ui && npm install && npm run dev`
+
+If you only want to understand the system, start from:
+
+- `docs/V2.1_ARCHITECTURE.md`
+- `api/server.py`
+- `modules/project_planner.py`
+- `modules/document_generator.py`
+- `web_ui/`
+
 ## Repository Notes
 
 This public repository is primarily intended for source browsing and architecture reference.
@@ -61,6 +77,13 @@ This public repository is primarily intended for source browsing and architectur
 - Local configs, runtime data, generated outputs, and historical operator assets are intentionally excluded.
 - Some internal or environment-specific flows may not be directly runnable after sanitization.
 - If you only want to understand the project, start from `README`, `docs/`, `api/`, `modules/`, and `web_ui/`.
+
+## Roadmap
+
+- Publish a smaller, safer demo set for readers who want to inspect representative outputs.
+- Replace more historical internal naming with the public-facing `SoftDoc Pipeline` name.
+- Add broader smoke coverage for CLI, API, and Web UI in public CI.
+- Continue separating runtime-only submission logic from generally reusable pipeline code.
 
 ## Optional Local Setup
 
@@ -154,6 +177,13 @@ Artifacts are generated under `output/<project_name>/`, typically including:
 - Risk and validation reports
 - Freeze package
 
+## Known Limitations
+
+- Sanitization removed local configs, runtime data, private templates, and operator assets, so some flows will not run end-to-end without local reconstruction.
+- The repository keeps source references for submission-related modules, but those flows depend on private credentials, browser state, or environment-specific setup.
+- Some document and GUI paths remain more Windows-friendly than cross-platform.
+- Public docs are improved, but some code comments, package metadata, and UI strings still use the historical project name.
+
 ## Development
 
 Run backend tests if you are adapting the code locally:
@@ -188,5 +218,9 @@ Do not publish:
 ## Disclaimer
 
 This project improves document generation and validation efficiency. It does not replace legal/compliance review. Final submission responsibility remains with the submitting party.
+
+## License
+
+This repository is released under the MIT License. See `LICENSE`.
 
 Repository URL: `https://github.com/CommitHu502Craft/SoftDoc-Pipeline.git`

@@ -1,0 +1,41 @@
+name: Documentation Feedback
+description: 报告 README、公开说明、命名或文档上的问题
+title: "[Docs] "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        适用于 README、公开说明、术语命名、目录说明、示例步骤等文档问题。
+
+  - type: textarea
+    id: page
+    attributes:
+      label: 涉及位置
+      description: 请写清楚是哪个文件、哪一段或哪个页面
+      placeholder: 例如：README_cn.md 的“仓库结构”部分
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 当前问题
+      description: 说明哪里不清楚、过时、冲突或会误导读者
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议修改
+      description: 如果你已经想好更好的写法，可以直接给建议
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已确认这里不包含真实密钥、账号、Cookie 或业务数据
+          required: true

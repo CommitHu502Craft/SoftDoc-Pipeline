@@ -1,0 +1,45 @@
+name: Public Smoke Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  python-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile Python sources
+        run: python -m compileall api core gui modules tests main.py run_api.py config.py
+
+  web-ui-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web_ui
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: web_ui/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Web UI
+        run: npm run build

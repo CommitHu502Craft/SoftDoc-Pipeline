@@ -1,0 +1,95 @@
+name: Repo Hygiene
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate public snapshot rules
+        shell: bash
+        run: |
+          python <<'PY'
+          from pathlib import Path
+          import re
+          import subprocess
+          import sys
+
+          tracked = subprocess.check_output(["git", "ls-files"], text=True).splitlines()
+          forbidden_prefixes = (
+              "data/",
+              "output/",
+              "logs/",
+              "archive/",
+              "temp_build/",
+              "runtime_skills/",
+              "templates/copyright/",
+              "Auto_Soft_Template/",
+          )
+          forbidden_exact = {
+              "config/api_config.json",
+              "config/submit_config.json",
+              "config/browser_session.json",
+              "gui_config.json",
+          }
+          forbidden_exts = {
+              ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx",
+              ".zip", ".7z", ".rar", ".tar", ".gz", ".pyc", ".pyo",
+          }
+          secret_patterns = [
+              re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
+              re.compile(r"AKIA[0-9A-Z]{16}"),
+              re.compile(r"-----BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY-----"),
+          ]
+          text_suffixes = {
+              ".py", ".md", ".txt", ".json", ".yml", ".yaml", ".toml", ".ini",
+              ".cfg", ".ts", ".tsx", ".js", ".jsx", ".css", ".html", ".sh",
+              ".ps1", ".bat", ".env", ".gitignore",
+          }
+
+          problems = []
+          for rel in tracked:
+              path = Path(rel)
+              rel_posix = rel.replace("\\", "/")
+              if rel_posix in forbidden_exact:
+                  problems.append(f"forbidden tracked file: {rel_posix}")
+              if rel_posix.startswith(forbidden_prefixes):
+                  problems.append(f"forbidden tracked path: {rel_posix}")
+              if "__pycache__" in path.parts:
+                  problems.append(f"cache directory tracked: {rel_posix}")
+              if path.suffix.lower() in forbidden_exts:
+                  problems.append(f"forbidden extension tracked: {rel_posix}")
+              if path.name.startswith(".env") and not path.name.endswith(".example"):
+                  problems.append(f"local env file tracked: {rel_posix}")
+
+              if path.suffix.lower() not in text_suffixes and path.name not in {"LICENSE", "README"}:
+                  continue
+              try:
+                  text = path.read_text(encoding="utf-8")
+              except UnicodeDecodeError:
+                  continue
+              for pattern in secret_patterns:
+                  if pattern.search(text):
+                      problems.append(f"secret-like pattern in {rel_posix}: {pattern.pattern}")
+
+          if problems:
+              print("Public snapshot hygiene check failed:")
+              for item in problems:
+                  print(f"- {item}")
+              sys.exit(1)
+
+          print("Public snapshot hygiene checks passed.")
+          PY
